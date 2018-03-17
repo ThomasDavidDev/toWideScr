@@ -1,16 +1,22 @@
-C:\Users\Thomas\documents\visual studio 2013\Projects\toWideScr\toWideScr\bin\Release\toWideScr.exe.config
-C:\Users\Thomas\documents\visual studio 2013\Projects\toWideScr\toWideScr\bin\Release\ffmpeg.exe
-C:\Users\Thomas\documents\visual studio 2013\Projects\toWideScr\toWideScr\bin\Release\ffprobe.exe
-C:\Users\Thomas\documents\visual studio 2013\Projects\toWideScr\toWideScr\bin\Release\toWideScr.exe.manifest
-C:\Users\Thomas\documents\visual studio 2013\Projects\toWideScr\toWideScr\bin\Release\toWideScr.application
-C:\Users\Thomas\documents\visual studio 2013\Projects\toWideScr\toWideScr\bin\Release\toWideScr.exe
-C:\Users\Thomas\documents\visual studio 2013\Projects\toWideScr\toWideScr\bin\Release\toWideScr.pdb
-C:\Users\Thomas\documents\visual studio 2013\Projects\toWideScr\toWideScr\bin\Release\Newtonsoft.Json.dll
-C:\Users\Thomas\documents\visual studio 2013\Projects\toWideScr\toWideScr\bin\Release\Newtonsoft.Json.xml
-C:\Users\Thomas\documents\visual studio 2013\Projects\toWideScr\toWideScr\obj\Release\toWideScr.toWideScr.resources
-C:\Users\Thomas\documents\visual studio 2013\Projects\toWideScr\toWideScr\obj\Release\toWideScr.Properties.Resources.resources
-C:\Users\Thomas\documents\visual studio 2013\Projects\toWideScr\toWideScr\obj\Release\toWideScr.csproj.GenerateResource.Cache
-C:\Users\Thomas\documents\visual studio 2013\Projects\toWideScr\toWideScr\obj\Release\toWideScr.exe.manifest
-C:\Users\Thomas\documents\visual studio 2013\Projects\toWideScr\toWideScr\obj\Release\toWideScr.application
-C:\Users\Thomas\documents\visual studio 2013\Projects\toWideScr\toWideScr\obj\Release\toWideScr.exe
-C:\Users\Thomas\documents\visual studio 2013\Projects\toWideScr\toWideScr\obj\Release\toWideScr.pdb
+C:/Users/Thomas/documents/visual studio 2013/Projects/toWideScr/toWideScr/bin/Release/toWideScr.exe.config
+C:/Users/Thomas/documents/visual studio 2013/Projects/toWideScr/toWideScr/bin/Release/ffmpeg.exe
+C:/Users/Thomas/documents/visual studio 2013/Projects/toWideScr/toWideScr/bin/Release/ffprobe.exe
+C:/Users/Thomas/documents/visual studio 2013/Projects/toWideScr/toWideScr/bin/Release/toWideScr.exe.manifest
+C:/Users/Thomas/documents/visual studio 2013/Projects/toWideScr/toWideScr/bin/Release/toWideScr.application
+C:/Users/Thomas/documents/visual studio 2013/Projects/toWideScr/toWideScr/bin/Release/toWideScr.exe
+C:/Users/Thomas/documents/visual studio 2013/Projects/toWideScr/toWideScr/bin/Release/toWideScr.pdb
+C:/Users/Thomas/documents/visual studio 2013/Projects/toWideScr/toWideScr/bin/Release/Newtonsoft.Json.dll
+C:/Users/Thomas/documents/visual studio 2013/Projects/toWideScr/toWideScr/bin/Release/Newtonsoft.Json.xml
+C:/Users/Thomas/documents/visual studio 2013/Projects/toWideScr/toWideScr/obj/Release/toWideScr.toWideScr.resources
+C:/Users/Thomas/documents/visual studio 2013/Projects/toWideScr/toWideScr/obj/Release/toWideScr.Properties.Resources.resources
+C:/Users/Thomas/documents/visual studio 2013/Projects/toWideScr/toWideScr/obj/Release/toWideScr.csproj.GenerateResource.Cache
+C:/Users/Thomas/documents/visual studio 2013/Projects/toWideScr/toWideScr/obj/Release/toWideScr.exe.manifest
+C:/Users/Thomas/documents/visual studio 2013/Projects/toWideScr/toWideScr/obj/Release/toWideScr.application
+C:/Users/Thomas/documents/visual studio 2013/Projects/toWideScr/toWideScr/obj/Release/toWideScr.exe
+C:/Users/Thomas/documents/visual studio 2013/Projects/toWideScr/toWideScr/obj/Release/toWideScr.pdb
+/home/thomas/stack/toWideScr/toWideScr/obj/Release/toWideScr.csprojResolveAssemblyReference.cache
+/home/thomas/stack/toWideScr/toWideScr/obj/Release/toWideScr.toWideScr.resources
+/home/thomas/stack/toWideScr/toWideScr/obj/Release/toWideScr.Properties.Resources.resources
+/home/thomas/stack/toWideScr/toWideScr/obj/Release/toWideScr.csproj.GenerateResource.Cache
+/home/thomas/stack/toWideScr/toWideScr/obj/Release/toWideScr.exe
+/home/thomas/stack/toWideScr/toWideScr/obj/Release/toWideScr.pdb

@@ -1,0 +1,11 @@
+/home/thomas/stack/toWideScr/toWideScr/obj/Debug/.NETFramework,Version=v4.7.1.AssemblyAttribute.cs
+/home/thomas/stack/toWideScr/toWideScr/obj/Debug/toWideScr.toWideScr.resources
+/home/thomas/stack/toWideScr/toWideScr/obj/Debug/toWideScr.Properties.Resources.resources
+/home/thomas/stack/toWideScr/toWideScr/bin/Debug/ffmpeg.exe
+/home/thomas/stack/toWideScr/toWideScr/bin/Debug/ffprobe.exe
+/home/thomas/stack/toWideScr/toWideScr/bin/Debug/toWideScr.exe.config
+/home/thomas/stack/toWideScr/toWideScr/bin/Debug/toWideScr.pdb
+/home/thomas/stack/toWideScr/toWideScr/bin/Debug/toWideScr.exe
+/home/thomas/stack/toWideScr/toWideScr/obj/Debug/toWideScr.exe
+/home/thomas/stack/toWideScr/toWideScr/obj/Debug/toWideScr.pdb
+/home/thomas/stack/toWideScr/toWideScr/bin/Debug/Newtonsoft.Json.dll

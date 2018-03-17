@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 
 
@@ -24,7 +25,6 @@ namespace toWideScr
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         string input; //= "C:/Users/Thomas/Videos/test.mp4";
@@ -40,13 +40,15 @@ namespace toWideScr
 
         private void button_run_click(object sender, EventArgs e)
         {
-            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
+            System.Threading.Thread.CurrentThread.CurrentCulture =
+                System.Globalization.CultureInfo.GetCultureInfo("en-US");
 
             input = textBox_Input.Text;
 
             if (input == "")
             {
-                DialogResult noInput = MessageBox.Show("No input source selected.", "Please insert working path.",MessageBoxButtons.OK);
+                DialogResult noInput = MessageBox.Show("No input source selected.", "Please insert working path.",
+                    MessageBoxButtons.OK);
                 return;
             }
 
@@ -61,7 +63,7 @@ namespace toWideScr
             cmdStartInfo.StartInfo.CreateNoWindow = true;
             cmdStartInfo.StartInfo.UseShellExecute = false;
             cmdStartInfo.StartInfo.RedirectStandardOutput = true;
-            cmdStartInfo.StartInfo.FileName = "ffprobe.exe";
+            cmdStartInfo.StartInfo.FileName = RuntimeInformation.IsOSPlatform(OSPlatform.Linux) ? "ffprobe" : "ffprobe.exe";
             cmdStartInfo.StartInfo.Arguments = "-i \"" + input + "\" -print_format json -show_streams";
             cmdStartInfo.Start();
             string streamInfo = cmdStartInfo.StandardOutput.ReadToEnd();
@@ -71,10 +73,12 @@ namespace toWideScr
             MovieInfo inf = JsonConvert.DeserializeObject<MovieInfo>(streamInfo);
             if (inf.streams == null)
             {
-                DialogResult noInput = MessageBox.Show("Wrong input source selected.", "Please insert working file.", MessageBoxButtons.OK);
+                DialogResult noInput = MessageBox.Show("Wrong input source selected.", "Please insert working file.",
+                    MessageBoxButtons.OK);
                 return;
             }
-            foreach(var value in inf.streams)
+
+            foreach (var value in inf.streams)
             {
                 if (value.codec_type == "video")
                 {
@@ -109,7 +113,8 @@ namespace toWideScr
 
             if (File.Exists(output))
             {
-                DialogResult ask = MessageBox.Show("Would you like to replace the existing file?", "Confirm File Replace", MessageBoxButtons.YesNo);
+                DialogResult ask = MessageBox.Show("Would you like to replace the existing file?",
+                    "Confirm File Replace", MessageBoxButtons.YesNo);
                 if (ask == DialogResult.No) return;
             }
 
@@ -124,12 +129,14 @@ namespace toWideScr
                 "-y -i \"" + input + "\" "
                 + "-metadata:s:v:0 rotate=0 "
                 + "-filter_complex \" "
-                    + "nullsrc=size=" + nullscrWidth + "x" + nullscrHeight + " [base]; "
-                    + "[0:v] setpts=PTS-STARTPTS, " + rotation + " scale=" + middenWidth + ":" + middenHeight + " [midden]; "
-                    + "[0:v] setpts=PTS-STARTPTS, " + rotation + " scale=" + linrechWidth + ":" + linrechHeight
-                    + ", crop=" + nullscrWidth + ":" + nullscrHeight + ":0:" + linrechY + ", boxblur=" + boxblur + ", eq=brightness=" + brightness + " [linksrechts]; "
-                    + "[base][linksrechts] overlay=shortest=1 [tmp1]; "
-                    + "[tmp1][midden] overlay=shortest=1:x=" + middenX + " "
+                + "nullsrc=size=" + nullscrWidth + "x" + nullscrHeight + " [base]; "
+                + "[0:v] setpts=PTS-STARTPTS, " + rotation + " scale=" + middenWidth + ":" + middenHeight +
+                " [midden]; "
+                + "[0:v] setpts=PTS-STARTPTS, " + rotation + " scale=" + linrechWidth + ":" + linrechHeight
+                + ", crop=" + nullscrWidth + ":" + nullscrHeight + ":0:" + linrechY + ", boxblur=" + boxblur +
+                ", eq=brightness=" + brightness + " [linksrechts]; "
+                + "[base][linksrechts] overlay=shortest=1 [tmp1]; "
+                + "[tmp1][midden] overlay=shortest=1:x=" + middenX + " "
                 + " \" "
                 + " -r " + framrate + " \"" + output + "\" ";
 
@@ -137,7 +144,7 @@ namespace toWideScr
             //cmdProcess.StartInfo.CreateNoWindow = true;
             cmdProcess.StartInfo.UseShellExecute = false;
             cmdProcess.StartInfo.RedirectStandardOutput = true;
-            cmdProcess.StartInfo.FileName = "ffmpeg.exe";
+            cmdProcess.StartInfo.FileName = RuntimeInformation.IsOSPlatform(OSPlatform.Linux) ? "ffmpeg" : "ffmpeg.exe";
             cmdProcess.StartInfo.Arguments = exe;
             cmdProcess.Start();
             cmdStartInfo.WaitForExit();
@@ -193,13 +200,15 @@ namespace toWideScr
         private void textBox_nullscrWidth_TextChanged(object sender, EventArgs e)
         {
             //Find and extract a number from a string
-            textBox_nullscrWidth.Text = System.Text.RegularExpressions.Regex.Match(textBox_nullscrWidth.Text, @"\d+").Value;
+            textBox_nullscrWidth.Text =
+                System.Text.RegularExpressions.Regex.Match(textBox_nullscrWidth.Text, @"\d+").Value;
         }
 
         private void textBox_nullscrHeight_TextChanged(object sender, EventArgs e)
         {
             //Find and extract a number from a string
-            textBox_nullscrHeight.Text = System.Text.RegularExpressions.Regex.Match(textBox_nullscrHeight.Text, @"\d+").Value;
+            textBox_nullscrHeight.Text =
+                System.Text.RegularExpressions.Regex.Match(textBox_nullscrHeight.Text, @"\d+").Value;
         }
 
         private void linkLabel_720P_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -225,7 +234,8 @@ namespace toWideScr
             //Find and extract a number from a string
             if (textBox_brightness.Text != "-")
             {
-                textBox_brightness.Text = System.Text.RegularExpressions.Regex.Match(textBox_brightness.Text, @"-?\d+").Value;
+                textBox_brightness.Text =
+                    System.Text.RegularExpressions.Regex.Match(textBox_brightness.Text, @"-?\d+").Value;
             }
         }
 
@@ -311,5 +321,4 @@ namespace toWideScr
     {
         public List<Stream> streams { get; set; }
     }
-
 }
